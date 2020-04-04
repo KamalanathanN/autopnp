@@ -1231,7 +1231,7 @@ void VoronoiRandomFieldSegmentation::segmentMap(const cv::Mat& original_map, cv:
 		room_boost_.load(filename_room.c_str());
 #else
 		//room_boost_->load<cv::ml::Boost>(filename_room.c_str());
-		room_boost_->load(filename_room.c_str());
+		room_boost_->load<cv::ml::Boost>(filename_room.c_str());
 #endif
 
 		std::string filename_hallway = classifier_storage_path + "vrf_hallway_boost.xml";
@@ -1242,7 +1242,7 @@ void VoronoiRandomFieldSegmentation::segmentMap(const cv::Mat& original_map, cv:
 		hallway_boost_.load(filename_hallway.c_str());
 #else
 		//hallway_boost_->load<cv::ml::Boost>(filename_hallway.c_str());
-		hallway_boost_->load(filename_hallway.c_str());
+		hallway_boost_->load<cv::ml::Boost>(filename_hallway.c_str());
 #endif
 
 		std::string filename_doorway = classifier_storage_path + "vrf_doorway_boost.xml";
@@ -1253,7 +1253,7 @@ void VoronoiRandomFieldSegmentation::segmentMap(const cv::Mat& original_map, cv:
 		doorway_boost_.load(filename_doorway.c_str());
 #else
 		//doorway_boost_->load<cv::ml::Boost>(filename_doorway.c_str());
-		doorway_boost_->load(filename_doorway.c_str());
+		doorway_boost_->load<cv::ml::Boost>(filename_doorway.c_str());
 #endif
 
 		// set the trained-Boolean true to only load parameters once

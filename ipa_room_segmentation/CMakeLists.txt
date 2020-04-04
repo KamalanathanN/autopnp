@@ -5,9 +5,7 @@ set(catkin_RUN_PACKAGES
 	actionlib
 	cv_bridge
 	ipa_building_msgs
-	libdlib
 	nav_msgs
-	opengm
 	roscpp
 	roslib
 	sensor_msgs
@@ -29,6 +27,8 @@ generate_dynamic_reconfigure_options(
 
 find_package(OpenCV REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system thread filesystem)
+find_package(dlib REQUIRED)
+find_package(OpenBLAS REQUIRED)
 
 find_package(OpenMP)
 if(OPENMP_FOUND)
@@ -58,6 +58,7 @@ DEPENDS
 	OpenCV
 	Boost
 	OpenMP
+	OpenBLAS
 )
 
 
@@ -101,7 +102,9 @@ target_link_libraries(room_segmentation_server
 	${catkin_LIBRARIES}
 	${Boost_LIBRARIES}
 	${OpenMP_LIBS}
-	${OpenCV_LIBRARIES})
+	${OpenBLAS_LIBRARIES}
+	${OpenCV_LIBRARIES}
+	${DLIB_LIBRARIES})
 
 ### client for testing purpose
 add_executable(room_segmentation_client ros/src/room_segmentation_client.cpp)

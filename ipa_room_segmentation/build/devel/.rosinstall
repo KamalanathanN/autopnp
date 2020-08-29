@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/kamal/ROSDevs/ROS_DEVS_ws/src/ipa_room_segmentation/build/devel/setup.sh

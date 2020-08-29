@@ -75,7 +75,8 @@ include_directories(
 	${catkin_INCLUDE_DIRS}
 	${OpenCV_INCLUDE_DIRS}
 	${Boost_INCLUDE_DIRS}
-)
+	${dlib_INCLUDE_DIRS} # my change
+	)
 
 ### segmentation action server: see room_segmentation_action_server_params.yaml to change the used method
 add_executable(room_segmentation_server
@@ -104,7 +105,7 @@ target_link_libraries(room_segmentation_server
 	${OpenMP_LIBS}
 	${OpenBLAS_LIBRARIES}
 	${OpenCV_LIBRARIES}
-	${DLIB_LIBRARIES})
+	${dlib_LIBRARIES})  # my change
 
 ### client for testing purpose
 add_executable(room_segmentation_client ros/src/room_segmentation_client.cpp)
